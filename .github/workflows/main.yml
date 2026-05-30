@@ -8,9 +8,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v3
+      - uses: actions/checkout@v4 # Mis à jour de v3 à v4
+      - name: Set up Python
+        uses: actions/setup-python@v5 # Mis à jour de v3 à v5
+        with:
+          python-version: '3.x' # Ajouté pour éviter l'erreur matrix manquante
       - name: Install dependencies
         run: |
           python -m pip install mkdocs
@@ -19,7 +21,7 @@ jobs:
         run: |
           mkdocs build
       - name: Upload Pages Artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3 # Correction : Passage en v3 (qui remplace l'ancien upload-artifact sous le capot)
         with:
           path: ./site
 
@@ -35,4 +37,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4 # Mis à jour de v1 à v4 (indispensable pour fonctionner avec upload-pages-artifact@v3)
