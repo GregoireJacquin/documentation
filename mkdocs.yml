@@ -1,0 +1,7 @@
+site_name: "Documentation de Grégoire"
+# configuration du thème
+theme:
+  name: material
+  logo: assets/Logo_Maif_2019.png
+extra_css:
+  - stylesheets/h_et_n_maif.css
