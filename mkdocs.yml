@@ -3,5 +3,18 @@ site_name: "Documentation de Grégoire"
 theme:
   name: material
   logo: assets/Logo_Maif_2019.png
+  favicon: assets/Logo_Maif_2019.png
+  palette:
+    scheme: slate
+#  features:
+#    - navigation.expand
+extra:
+  generator: false
+copyright: Copyright &copy; 2016 - 2026 Maif. Tous droits réservés.
+
 extra_css:
   - stylesheets/h_et_n_maif.css
+
+#nav: # En pointant directement sur l'index, le titre ne se répétera plus
+#  - Frontend:
+#      - contatc-front-commercial: contatc-front-commercial.md
